@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: src/pages/clients.md
+  label: Clients
+  match: "**/*"
+- type: document
   path: src/pages/index.md
   label: Home page
 upload_dir: public/media
