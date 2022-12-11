@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import * as content from './index.json';
+import * as content from './index.md';
 ---
 
-<Layout title={content.title}>
+<Layout title={content.frontmatter.title}>
   <main>
     <h1 class='text-2xl'>
-      {content.title}
+      {content.frontmatter.title}
     </h1>
   </main>
 </Layout>
