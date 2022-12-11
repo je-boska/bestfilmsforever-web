@@ -2,7 +2,7 @@
 import Player from '../components/Player.astro';
 import Layout from '../layouts/Layout.astro';
 
-const pages = await Astro.glob('./*.md');
+const pages = await Astro.glob('../../content/*.md');
 const { title, reel, lead } = pages[1].frontmatter;
 const { images } = pages[0].frontmatter;
 ---
