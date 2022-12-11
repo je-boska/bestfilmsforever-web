@@ -1,16 +1,18 @@
 ---
+import Player from '../components/Player.astro';
 import Layout from '../layouts/Layout.astro';
 import * as content from './index.md';
 
-const { title, lead } = content.frontmatter;
+const { reel, title, lead } = content.frontmatter;
 ---
 
 <Layout title={title}>
   <main>
+    <Player reel={reel} />
     <h1 class='text-2xl'>
       {title}
     </h1>
     <p>{lead}</p>
-    <div set:html={content.rawContent} />
+    <Fragment set:html={content.compiledContent()} />
   </main>
 </Layout>
