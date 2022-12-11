@@ -5,6 +5,7 @@ lead: is a Berlin based video collective born from the underbelly of the interne
   and the underground electronic music scene, specialized in live broadcast documentary
   films & music videos, circulating around music and art.
 clients:
+- "/media/01_ctm_standard_outline.png"
 - "/media/unsound-1.svg"
 - "/media/forecast_logo_black.svg"
 
