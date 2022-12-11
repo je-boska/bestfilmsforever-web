@@ -1,0 +1,16 @@
+---
+label: Home
+hide_body: false
+fields:
+- type: number
+  name: reel
+  label: reel
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: lead
+  label: lead
+- type: image_gallery
+  name: clients
+  label: clients
