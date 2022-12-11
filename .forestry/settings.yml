@@ -5,10 +5,8 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: src/index.astro
+  path: src/pages/index.astro
   label: Home page
-  match: "**/*"
-  read_only: false
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
