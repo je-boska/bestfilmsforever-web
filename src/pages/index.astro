@@ -1,10 +1,11 @@
 ---
 import Player from '../components/Player.astro';
 import Layout from '../layouts/Layout.astro';
+import * as content from '../../content/index.md';
+import * as clients from '../../content/clients.md';
 
-const pages = await Astro.glob('../../content/*.md');
-const { title, reel, lead } = pages[1].frontmatter;
-const { images } = pages[0].frontmatter;
+const { title, reel, lead } = content.frontmatter;
+const { images } = clients.frontmatter;
 ---
 
 <Layout title={title}>
@@ -14,7 +15,7 @@ const { images } = pages[0].frontmatter;
       {title}
     </h1>
     <p>{lead}</p>
-    <Fragment set:html={pages[1].compiledContent()} />
+    <Fragment set:html={content.compiledContent()} />
     <div class='flex gap-4 m-8'>
       {images.map((image: string) => <img src={image} class='h-32' alt='' />)}
     </div>
