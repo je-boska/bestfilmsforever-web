@@ -2,8 +2,10 @@
 import Player from '../components/Player.astro';
 import Layout from '../layouts/Layout.astro';
 import * as content from './index.md';
+import * as clients from './clients.md';
 
 const { reel, title, lead } = content.frontmatter;
+const { images } = clients.frontmatter;
 ---
 
 <Layout title={title}>
@@ -14,5 +16,8 @@ const { reel, title, lead } = content.frontmatter;
     </h1>
     <p>{lead}</p>
     <Fragment set:html={content.compiledContent()} />
+    <div class='flex gap-4 m-8'>
+      {images.map((image: string) => <img src={image} class='h-32' alt='' />)}
+    </div>
   </main>
 </Layout>
