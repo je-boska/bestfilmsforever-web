@@ -1,12 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import * as content from './index.md';
+
+const { title, lead } = content.frontmatter;
 ---
 
-<Layout title={content.frontmatter.title}>
+<Layout title={title}>
   <main>
     <h1 class='text-2xl'>
-      {content.frontmatter.title}
+      {title}
     </h1>
+    <p>{lead}</p>
+    <div set:html={content.rawContent} />
   </main>
 </Layout>
