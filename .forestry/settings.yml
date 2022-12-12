@@ -5,9 +5,6 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: content/clients.md
-  label: Clients
-- type: document
   path: content/index.md
   label: Home page
 upload_dir: public/media
