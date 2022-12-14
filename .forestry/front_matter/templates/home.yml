@@ -5,6 +5,11 @@ fields:
 - type: number
   name: reel
   label: reel
+- name: byline
+  type: text
+  config:
+    required: false
+  label: byline
 - type: text
   name: title
   label: title
