@@ -9,10 +9,6 @@
     @apply font-sans;
   }
 
-  p {
-    @apply text-lg;
-  }
-
   /* Rich text */
 
   .rich-text p {
