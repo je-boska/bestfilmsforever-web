@@ -8,14 +8,20 @@ const { title, reel, lead, clients } = content.frontmatter;
 
 <Layout title={title}>
   <main>
-    <Player reel={reel} />
-    <h1 class='text-2xl'>
-      {title}
-    </h1>
-    <p>{lead}</p>
-    <Fragment set:html={content.compiledContent()} />
-    <div class='flex gap-4 m-8'>
+    <section>
+      <Player reel={reel} />
+    </section>
+    <section class='flex'>
+      <div>
+        <h1 class='text-2xl'>
+          {title}
+        </h1>
+        <p>{lead}</p>
+      </div>
+      <div set:html={content.compiledContent()} />
+    </section>
+    <section class='flex gap-4 m-8'>
       {clients.map((image: string) => <img src={image} class='h-32' alt='' />)}
-    </div>
+    </section>
   </main>
 </Layout>
