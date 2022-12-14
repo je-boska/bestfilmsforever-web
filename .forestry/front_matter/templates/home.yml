@@ -16,6 +16,10 @@ fields:
 - type: textarea
   name: lead
   label: lead
+- name: member_photos
+  type: image_gallery
+  config: {}
+  label: member photos
 - name: clients
   type: image_gallery
   config: {}
