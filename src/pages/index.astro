@@ -8,6 +8,11 @@ const { byline, title, reel, lead, clients } = content.frontmatter;
 
 <Layout title={title}>
   <main>
+    <img
+      src='/media/bff-logo.png'
+      alt=''
+      class='fixed top-4 left-4 h-8 md:h-12 z-10'
+    />
     <section>
       <Player reel={reel} />
     </section>
