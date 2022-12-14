@@ -7,7 +7,14 @@ import LinkedIn from '../components/icons/LinkedIn.astro';
 import Instagram from '../components/icons/Instagram.astro';
 import Facebook from '../components/icons/Facebook.astro';
 
-const { byline, title, reel, lead, clients } = content.frontmatter;
+const {
+  byline,
+  title,
+  reel,
+  lead,
+  member_photos: memberPhotos,
+  clients,
+} = content.frontmatter;
 ---
 
 <Layout title={title}>
@@ -30,6 +37,15 @@ const { byline, title, reel, lead, clients } = content.frontmatter;
           <p class='font-bold text-xl md:text-2xl mb-4'>{lead}</p>
         </div>
         <div class='rich-text' set:html={content.compiledContent()} />
+      </div>
+    </section>
+    <section class='max-w-5xl mx-auto my-20'>
+      <div class='grid md:grid-cols-2'>
+        {
+          memberPhotos.map((memberPhoto: string) => (
+            <img src={memberPhoto} alt='' />
+          ))
+        }
       </div>
     </section>
     <section class='max-w-7xl mx-auto my-20'>
