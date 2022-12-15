@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Mukta';
+    src: url('@fontsource/mukta/files');
+    font-weight: 700;
+  }
+
   /* Global */
 
   html {
@@ -13,5 +19,10 @@
 
   .rich-text p {
     @apply mb-4;
+  }
+
+  .rich-text strong,
+  .rich-text b {
+    @apply font-bold;
   }
 }

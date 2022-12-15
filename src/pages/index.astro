@@ -2,10 +2,6 @@
 import Player from '../components/Player.astro';
 import Layout from '../layouts/Layout.astro';
 import * as content from '../../content/index.md';
-import Twitch from '../components/icons/Twitch.astro';
-import LinkedIn from '../components/icons/LinkedIn.astro';
-import Instagram from '../components/icons/Instagram.astro';
-import Facebook from '../components/icons/Facebook.astro';
 
 const {
   byline,
@@ -27,19 +23,22 @@ const {
     <section>
       <Player reel={reel} />
     </section>
-    <section class='max-w-5xl mx-auto my-20'>
-      <h3 class='m-4 font-bold uppercase text-base'>{byline}</h3>
+    <section class='max-w-5xl mx-auto my-10 md:my-20'>
+      <h3 class='m-4 text-base uppercase'>{byline}</h3>
       <div class='m-4 grid md:grid-cols-2'>
         <div class='mr-8'>
-          <h1 class='text-4xl md:text-6xl xl:text-7xl mb-4'>
+          <h1 class='text-5xl md:text-6xl xl:text-7xl mb-4'>
             {title}
           </h1>
-          <p class='font-bold text-xl md:text-2xl mb-4'>{lead}</p>
+          <p class='font-bold text-lg md:text-xl xl:text-2xl mb-4'>{lead}</p>
         </div>
-        <div class='rich-text' set:html={content.compiledContent()} />
+        <div
+          class='rich-text xl:text-lg'
+          set:html={content.compiledContent()}
+        />
       </div>
     </section>
-    <section class='max-w-5xl mx-auto my-20'>
+    <section class='max-w-5xl mx-auto my-10 md:my-20'>
       <div class='grid md:grid-cols-2'>
         {
           memberPhotos.map((memberPhoto: string) => (
@@ -50,7 +49,7 @@ const {
     </section>
     <section class='max-w-7xl mx-auto my-20'>
       <div class='flex md:justify-center m-4 mb-8'>
-        <h3 class='font-bold uppercase'>Clients & Collaboration Partners</h3>
+        <h3 class='uppercase'>Clients & Collaboration Partners</h3>
       </div>
       <div class='flex flex-wrap md:justify-center gap-4 md:gap-8 m-4'>
         {
@@ -60,71 +59,5 @@ const {
         }
       </div>
     </section>
-    <footer class='bg-black py-20 text-white relative'>
-      <img
-        src='/media/bff-logo.png'
-        alt=''
-        class='md:absolute top-24 left-1/2 md:-translate-x-1/2 m-4 mb-8 h-12 z-10'
-      />
-      <div class='max-w-7xl mx-auto md:flex justify-between'>
-        <div class='m-4'>
-          <span class='uppercase text-pink-600 text-sm mb-6 block'
-            >Get in touch</span
-          >
-          <span class='uppercase text-gray-300 text-sm block'
-            >BFF | Best Films Forever</span
-          >
-          <a
-            href='mailto:mail@bestfilmsforever.com'
-            class='text-gray-500 mb-6 block'>mail@bestfilmsforever.com</a
-          >
-          <a href='/imprint' class='text-gray-500 block mb-8'
-            >Imprint & Privacy policy</a
-          >
-        </div>
-        <div class='m-4 md:text-right'>
-          <span class='uppercase text-pink-600 text-sm mb-6 md:mb-8 block'
-            >Follow us</span
-          >
-          <ul class='flex gap-4 md:justify-end mb-6 md:mb-8'>
-            <li>
-              <a
-                class='fill-current text-gray-300 hover:opacity-60'
-                href='https://www.instagram.com/bff_bestfilmsforever/'
-              >
-                <Instagram />
-              </a>
-            </li>
-            <li>
-              <a
-                class='fill-current text-gray-300 hover:opacity-60'
-                href='https://www.facebook.com/bestfilmsforevercollective/'
-              >
-                <Facebook />
-              </a>
-            </li>
-            <li>
-              <a
-                class='fill-current text-gray-300 hover:opacity-60'
-                href='https://www.twitch.tv/bestfilmsforever'
-              >
-                <Twitch />
-              </a>
-            </li>
-            <li>
-              <a
-                class='fill-current text-gray-300 hover:opacity-60'
-                href='https://www.linkedin.com/company/bff-best-films-forever-collective/'
-              >
-                <LinkedIn />
-              </a>
-            </li>
-          </ul>
-          <span class='text-gray-300 text-sm'
-            >© 2021 BFF | bestfilmsforever</span
-          >
-        </div>
-      </div>
-    </footer>
   </main>
 </Layout>
