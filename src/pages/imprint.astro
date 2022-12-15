@@ -1,0 +1,10 @@
+---
+import * as content from '../../content/imprint.md';
+import Layout from '../layouts/Layout.astro';
+
+const { title } = content.frontmatter;
+---
+
+<Layout title={title}>
+  <div class='rich-text' set:html={content.compiledContent()} />
+</Layout>
