@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: content/imprint.md
+  label: Imprint and Privacy Policy
+  match: "**/*"
+- type: document
   path: content/index.md
   label: Home page
 upload_dir: public/media
