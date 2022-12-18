@@ -10,10 +10,10 @@ clients:
 - "/media/unsound-1.svg"
 - "/media/forecast_logo_black.svg"
 member_photos:
-- "/media/avril.jpeg"
-- "/media/theresa.jpeg"
-- "/media/petra.jpeg"
 - "/media/zoe.jpeg"
+- "/media/theresa.jpeg"
+- "/media/avril.jpeg"
+- "/media/petra.jpeg"
 
 ---
 ​Our production services range from full-scale live broadcast video productions to independent consultations for tech solutions on live streams. On the creative end, we make music videos, short-form documentaries, cultural archive pieces, and commissioned visual content. All of our content is to fulfill self-publication.
