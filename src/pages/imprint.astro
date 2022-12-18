@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Close from '../components/icons/Close.astro';
 import * as content from '../../content/imprint.md';
 
 const { title } = content.frontmatter;
@@ -7,7 +8,29 @@ const { title } = content.frontmatter;
 
 <Layout title={title}>
   <main>
-    <div class='max-w-4xl mx-auto my-20'>
+    <div class='absolute top-4 right-4'>
+      <a class='h-32 w-32 xl:h-40 xl:w-40 fill-current text-black' href='/'
+        ><Close />
+      </a>
+    </div>
+    <div class='max-w-4xl mx-auto my-10 md:my-20'>
+      <div class='mx-4 mb-10'>
+        <h3 class='font-bold mb-4'>CONTACT</h3>
+        <p class='mb-4'>
+          <span class='block font-bold'>BFF | best films forever</span>
+          <span class='block'>Baumgartner Kahlert GbR</span>
+          <span class='block'>Feurigstr. 19</span>
+          <span class='block mb-2'>10827 Berlin</span>
+          <a class='block' href='mailto:mail@bestfilmsforever.com'>
+            mail@bestfilmsforever.com
+          </a>
+        </p>
+        <p>
+          <span class='block font-bold'>Managing Directors BFF</span>
+          <span class='block'>Zoe Kahlert</span>
+          <span>Theresa Baumgartner</span>
+        </p>
+      </div>
       <div class='rich-text m-4'>
         <Fragment set:html={content.compiledContent()} />
       </div>
