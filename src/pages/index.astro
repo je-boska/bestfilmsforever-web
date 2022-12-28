@@ -14,49 +14,44 @@ const {
 ---
 
 <Layout title={title}>
-  <main>
-    <img
-      src='/media/bff-logo.png'
-      alt=''
-      class='fixed top-4 left-4 h-8 md:h-12 z-10'
-    />
-    <section>
-      <Player reel={reel} />
-    </section>
-    <section class='max-w-4xl mx-auto my-10 md:my-20'>
-      <div class='m-4'>
-        <div class='mr-8'>
-          <h1 class='uppercase font-bold text-5xl md:text-6xl xl:text-7xl mb-4'>
-            {title}
-          </h1>
-          <p class='font-bold text-lg md:text-xl xl:text-2xl mb-4'>{lead}</p>
-        </div>
-        <div
-          class='rich-text xl:text-lg'
-          set:html={content.compiledContent()}
-        />
+  <img
+    src='/media/bff-logo.png'
+    alt=''
+    class='fixed top-4 left-4 h-8 md:h-12 z-10'
+  />
+  <section>
+    <Player reel={reel} />
+  </section>
+  <section class='max-w-4xl mx-auto my-10 md:my-20'>
+    <div class='m-4'>
+      <div class='mr-8'>
+        <h1 class='uppercase font-bold text-5xl md:text-6xl xl:text-7xl mb-4'>
+          {title}
+        </h1>
+        <p class='font-bold text-lg md:text-xl xl:text-2xl mb-4'>{lead}</p>
       </div>
-    </section>
-    <section class='my-10 md:my-20'>
-      <div class='grid md:grid-cols-2 xl:grid-cols-4'>
-        {
-          memberPhotos.map((memberPhoto: string) => (
-            <img src={memberPhoto} alt='' />
-          ))
-        }
-      </div>
-    </section>
-    <section class='max-w-7xl mx-auto my-20'>
-      <div class='flex md:justify-center m-4 mb-8'>
-        <h3 class='uppercase'>Clients & Collaboration Partners</h3>
-      </div>
-      <div class='flex flex-wrap md:justify-center gap-4 md:gap-8 m-4'>
-        {
-          clients.map((image: string) => (
-            <img src={image} class='h-16 md:h-24' alt='' />
-          ))
-        }
-      </div>
-    </section>
-  </main>
+      <div class='rich-text xl:text-lg' set:html={content.compiledContent()} />
+    </div>
+  </section>
+  <section class='my-10 md:my-20'>
+    <div class='grid md:grid-cols-2 xl:grid-cols-4'>
+      {
+        memberPhotos.map((memberPhoto: string) => (
+          <img src={memberPhoto} alt='' />
+        ))
+      }
+    </div>
+  </section>
+  <section class='max-w-7xl mx-auto my-20'>
+    <div class='flex md:justify-center m-4 mb-8'>
+      <h3 class='uppercase'>Clients & Collaboration Partners</h3>
+    </div>
+    <div class='flex flex-wrap md:justify-center gap-4 md:gap-8 m-4'>
+      {
+        clients.map((image: string) => (
+          <img src={image} class='h-16 md:h-24' alt='' />
+        ))
+      }
+    </div>
+  </section>
 </Layout>
