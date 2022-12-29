@@ -8,12 +8,12 @@ const { title } = content.frontmatter;
 
 <Layout title={title}>
   <div class='absolute top-4 right-4'>
-    <a class='h-32 w-32 xl:h-40 xl:w-40 fill-current text-black' href='/'
+    <a class='h-32 w-32 xl:h-52 xl:w-52 fill-current text-black' href='/'
       ><Close />
     </a>
   </div>
-  <div class='max-w-4xl mx-auto my-10 md:my-20'>
-    <div class='mx-4 mb-10'>
+  <div class='grid lg:grid-cols-[1fr,3fr] my-10 lg:my-20'>
+    <div class='m-4 mb-10 lg:mx-20'>
       <h3 class='font-bold mb-4'>CONTACT</h3>
       <p class='mb-4'>
         <span class='block font-bold'>BFF | best films forever</span>
@@ -30,7 +30,7 @@ const { title } = content.frontmatter;
         <span>Theresa Baumgartner</span>
       </p>
     </div>
-    <div class='rich-text m-4'>
+    <div class='max-w-3xl rich-text m-4'>
       <Fragment set:html={content.compiledContent()} />
     </div>
   </div>
