@@ -16,6 +16,13 @@ fields:
 - type: textarea
   name: lead
   label: lead
+- name: members
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: members
 - name: member_photos
   type: image_gallery
   config: {}
