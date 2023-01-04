@@ -3,18 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: 'Mukta';
-    src: url('/fonts/mukta-latin-400-normal.woff2') format('woff2');
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: 'Mukta';
-    src: url('/fonts/mukta-latin-700-normal.woff2') format('woff2');
-    font-weight: 700;
-  }
-
   /* Global */
 
   html {
