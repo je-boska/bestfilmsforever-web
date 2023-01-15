@@ -4,7 +4,6 @@ import Layout from '../layouts/Layout.astro';
 import * as content from '../../content/index.md';
 
 const {
-  byline,
   title,
   reel,
   lead,
@@ -16,7 +15,7 @@ const {
 
 <Layout title={title}>
   <img
-    src='/media/bff-logo.png'
+    src='/media/bff-logo-heart.png'
     alt=''
     class='fixed top-4 left-4 h-8 md:h-12 z-10'
   />
@@ -40,9 +39,9 @@ const {
     <div class='grid md:grid-cols-2'>
       {
         memberPhotos.map((memberPhoto: string, idx: number) => (
-          <div class='relative'>
+          <div class='group relative'>
             <img src={memberPhoto} alt='' />
-            <span class='absolute bottom-4 left-4 text-white opacity-60'>
+            <span class='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-60'>
               {members[idx]}
             </span>
           </div>
@@ -62,7 +61,7 @@ const {
       {
         clients.map((image: string) => (
           <div class='h-16 md:h-24 max-w-[100px] flex justify-center items-center'>
-            <img src={image} class='' alt='' />
+            <img src={image} alt='' />
           </div>
         ))
       }
