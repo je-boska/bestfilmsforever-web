@@ -6,7 +6,7 @@
   /* Global */
 
   html {
-    @apply font-sans;
+    @apply font-sans bg-black text-gray-200;
   }
 
   /* Rich text */
