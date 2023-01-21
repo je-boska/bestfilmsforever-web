@@ -23,15 +23,15 @@ const {
     <Player reel={reel} />
   </section>
   <section class='max-w-4xl mx-auto my-10 md:my-32'>
-    <div class='m-4'>
-      <div class='mr-8'>
-        <h1
-          class='uppercase font-mono font-bold text-5xl md:text-6xl xl:text-7xl mb-6 -translate-x-1'
-        >
-          {title}
-        </h1>
-        <p class='font-semibold text-lg md:text-xl mb-4'>{lead}</p>
-      </div>
+    <div class='m-4' data-aos='fade-in' data-aos-duration='800'>
+      <h1
+        class='uppercase font-mono font-bold text-5xl md:text-6xl xl:text-7xl mb-6 -translate-x-1'
+      >
+        {title}
+      </h1>
+      <p class='font-semibold text-lg md:text-xl mb-4'>
+        {lead}
+      </p>
       <div class='rich-text xl:text-lg' set:html={content.compiledContent()} />
     </div>
   </section>
@@ -39,7 +39,12 @@ const {
     <div class='grid md:grid-cols-2'>
       {
         memberPhotos.map((memberPhoto: string, idx: number) => (
-          <div class='group relative'>
+          <div
+            class='group relative'
+            data-aos='fade-in'
+            data-aos-duration='800'
+            data-aos-delay={idx * 100}
+          >
             <img src={memberPhoto} alt='' />
             <span class='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-60 transition-opacity'>
               {members[idx]}
@@ -49,7 +54,11 @@ const {
       }
     </div>
   </section>
-  <section class='max-w-7xl mx-auto my-32'>
+  <section
+    class='max-w-7xl mx-auto my-32'
+    data-aos='fade-in'
+    data-aos-duration='800'
+  >
     <div class='flex justify-center mb-16'>
       <h3 class='md:text-lg uppercase font-mono'>
         Clients & Collaboration Partners
