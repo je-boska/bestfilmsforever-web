@@ -5,7 +5,6 @@ title: Best Films Forever
 lead: BFF is a Berlin based video collective born from the underbelly of the internet,
   specialised in cultural documentary and live broadcast.
 clients:
-- "/media/mtv_hd_logo_white.png"
 - "/media/approved-boiler-room-logo.svg"
 - "/media/approved_goetheinstitute.svg"
 - "/media/irlemb-logo.svg"
@@ -14,6 +13,7 @@ clients:
 - "/media/approved_dussmann_logo.svg"
 - "/media/barbican-logo.svg"
 - "/media/approved_00_pictoplasma_logo.svg"
+- "/media/mtv_hd_logo_white.png"
 - "/media/pushlive.png"
 - "/media/bfs_mm_logo_rgb_sw_css_maerzmusik.svg"
 - "/media/dh-logo.svg"
