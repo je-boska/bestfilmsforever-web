@@ -1,26 +1,27 @@
 ---
 import Player from '../components/Player.astro';
 import Layout from '../layouts/Layout.astro';
-import * as content from '../../content/index.md';
+import { getHomePage } from '../queries/Home';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 const {
   title,
-  reel,
-  lead,
-  members,
-  member_photos: memberPhotos,
-  clients,
-} = content.frontmatter;
+  reelNumber,
+  metaDescription,
+  description,
+  memberPhotosCollection,
+  clientsCollection,
+} = await getHomePage();
 ---
 
-<Layout title={title} description={lead}>
+<Layout title={title} description={metaDescription}>
   <img
     src='/media/bff-logo-heart.png'
     alt=''
     class='fixed top-4 left-4 h-8 md:h-12 z-10'
   />
   <section>
-    <Player reel={reel} />
+    <Player reel={reelNumber} />
   </section>
   <section class='max-w-4xl mx-auto my-10 md:my-32'>
     <div class='m-4' data-aos='fade-in' data-aos-duration='800'>
@@ -29,25 +30,25 @@ const {
       >
         {title}
       </h1>
-      <p class='font-semibold text-lg md:text-xl mb-4'>
-        {lead}
-      </p>
-      <div class='rich-text xl:text-lg' set:html={content.compiledContent()} />
+      <div
+        class='rich-text xl:text-lg'
+        set:html={documentToHtmlString(description.json)}
+      />
     </div>
   </section>
   <section class='my-10 md:my-20'>
     <div class='grid md:grid-cols-2'>
       {
-        memberPhotos.map((memberPhoto: string, idx: number) => (
+        memberPhotosCollection.items.map((memberPhoto: any, idx: number) => (
           <div
             class='group relative'
             data-aos='fade-in'
             data-aos-duration='800'
             data-aos-delay={idx * 100}
           >
-            <img src={memberPhoto} alt='' />
+            <img src={memberPhoto.url} alt={memberPhoto.title} />
             <span class='absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-60 transition-opacity'>
-              {members[idx]}
+              {memberPhoto.title}
             </span>
           </div>
         ))
@@ -66,9 +67,9 @@ const {
     </div>
     <div class='flex flex-wrap justify-center gap-y-8 gap-x-8 sm:gap-x-16 m-4'>
       {
-        clients.map((image: string) => (
+        clientsCollection.items.map((image: any) => (
           <div class='h-auto max-w-[120px] flex items-center'>
-            <img src={image} alt='' />
+            <img src={image.url} alt='' />
           </div>
         ))
       }

@@ -5,7 +5,7 @@ import '@fontsource/inter/variable.css';
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
 }
 
 const { title, description } = Astro.props;
@@ -20,10 +20,18 @@ const { title, description } = Astro.props;
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>BFF | {title}</title>
-    <meta name='description' content={description} />
+    <meta
+      name='description'
+      content={description ??
+        'BFF is a Berlin based video collective born from the underbelly of the internet, specialised in cultural documentary and live broadcast.'}
+    />
     <meta property='og:title' content='Best Films Forever' />
     <meta property='og:site_name' content='Best Films Forever' />
-    <meta property='og:description' content={description} />
+    <meta
+      property='og:description'
+      content={description ??
+        'BFF is a Berlin based video collective born from the underbelly of the internet, specialised in cultural documentary and live broadcast.'}
+    />
     <meta property='og:url' content='https://bestfilmsforever.com/' />
     <meta property='og:type' content='website' />
     <meta
