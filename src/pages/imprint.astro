@@ -1,8 +1,9 @@
 ---
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import Layout from '../layouts/Layout.astro';
-import * as content from '../../content/imprint.md';
+import { getImprintPage } from '../queries/Imprint';
 
-const { title } = content.frontmatter;
+const { title, contact, imprint } = await getImprintPage();
 ---
 
 <Layout title={title}>
@@ -14,25 +15,11 @@ const { title } = content.frontmatter;
     />
   </a>
   <div class='grid lg:grid-cols-[1fr,3fr] my-20'>
-    <div class='m-4 mb-10 lg:mx-20'>
-      <h3 class='font-bold mb-4'>CONTACT</h3>
-      <p class='mb-4'>
-        <span class='block font-bold'>BFF | best films forever</span>
-        <span class='block'>Baumgartner Kahlert GbR</span>
-        <span class='block'>Feurigstr. 19</span>
-        <span class='block mb-2'>10827 Berlin</span>
-        <a class='block' href='mailto:mail@bestfilmsforever.com'>
-          mail@bestfilmsforever.com
-        </a>
-      </p>
-      <p>
-        <span class='block font-bold'>Managing Directors BFF</span>
-        <span class='block'>Zoe Kahlert</span>
-        <span>Theresa Baumgartner</span>
-      </p>
+    <div class='m-4 mb-10 lg:mx-20 rich-text'>
+      <Fragment set:html={documentToHtmlString(contact.json)} />
     </div>
     <div class='max-w-3xl rich-text m-4'>
-      <Fragment set:html={content.compiledContent()} />
+      <Fragment set:html={documentToHtmlString(imprint.json)} />
     </div>
   </div>
 </Layout>

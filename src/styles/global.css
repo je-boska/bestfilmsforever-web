@@ -15,8 +15,19 @@
     @apply mb-4;
   }
 
+  .rich-text h3 {
+    @apply mb-6;
+  }
+
   .rich-text strong,
   .rich-text b {
     @apply font-bold;
+  }
+
+  .rich-text ul {
+    @apply mb-6;
+  }
+  .rich-text li p {
+    @apply mb-0;
   }
 }
